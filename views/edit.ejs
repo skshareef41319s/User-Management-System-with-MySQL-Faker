@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Username</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .delete-button {
+            background-color: #dc3545;
+        }
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Username for <%= user.email %></h2>
+        <form method="post" action="/users/<%= user.id %>?_method=PATCH">
+            <label for="username">New Username:</label>
+            <input type="text" name="username" id="username" value="<%= user.username %>" required minlength="3" maxlength="20">
+
+            <label for="password">Enter Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required autocomplete="current-password">
+
+            <button type="submit">Update Username</button>
+        </form>
+        <form method="post" action="/users/<%= user.id %>?_method=DELETE" style="margin-top: 20px;">
+            <label for="delete-password">Enter Password to Delete:</label>
+            <input type="password" name="password" id="delete-password" placeholder="Enter your password" required autocomplete="current-password">
+            <button type="submit" class="delete-button">Delete User</button>
+        </form>
+    </div>
+</body>
+</html>
