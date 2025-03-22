@@ -47,7 +47,7 @@ npm install
 
 ### 4️⃣ Set Up MySQL Database
 
-Open MySQL CLI or phpMyAdmin.
+Open MySQL CLI or use MySQL workbench.
 
 Create a new database:
 
@@ -62,7 +62,7 @@ Update `index.js` with your MySQL credentials.
 ```bash
 npm start
 ```
-
+Tip : use **Nodemon** for auto restarting the server.
 ---
 
 ## 🚀 Usage
