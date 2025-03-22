@@ -1,4 +1,4 @@
-# 🚀 User Management System with MySQL & Faker
+# 🚀 User Management System with MySQL & Faker 
 
 This project is a **User Management System** built using **MySQL** as the database and **Faker.js** for generating realistic dummy data. It provides **CRUD operations** to manage users and a **clean web interface** using **EJS templates**.
 
